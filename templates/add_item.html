@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>اضافه کردن کالا</title>
+</head>
+<body>
+    <h1>اضافه کردن کالا</h1>
+    <form method="POST">
+        <input type="text" name="item_name" placeholder="نام کالا" required>
+        <textarea name="item_description" placeholder="توضیحات کالا" required></textarea>
+        <input type="number" name="item_price" placeholder="قیمت" required>
+        <button type="submit">اضافه کردن</button>
+    </form>
+    <a href="{{ url_for('home') }}">بازگشت به خانه</a>
+</body>
+</html>

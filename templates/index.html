@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>فروشگاه کالاهای دست دوم</title>
+</head>
+<body>
+    <h1>خوش آمدید {{ username }}</h1>
+    <a href="{{ url_for('add_item') }}">اضافه کردن کالا</a>
+    <h2>کالاهای موجود</h2>
+    <ul>
+        {% for item in items %}
+        <li>
+            <strong>{{ item['name'] }}</strong><br>
+            {{ item['description'] }}<br>
+            قیمت: {{ item['price'] }}<br>
+            فروشنده: {{ item['seller'] }}
+        </li>
+        {% endfor %}
+    </ul>
+    <div id="chat">
+        <ul id="messages"></ul>
+        <input id="myMessage" autocomplete="off"><button onclick="sendMessage()">ارسال</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('message', function(msg) {
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(msg));
+            document.getElementById("messages").appendChild(li);
+        });
+        function sendMessage() {
+            var message = document.getElementById("myMessage").value;
+            socket.send(message);
+            document.getElementById("myMessage").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ورود</title>
+</head>
+<body>
+    <h1>ورود</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="نام کاربری" required>
+        <input type="password" name="password" placeholder="رمز عبور" required>
+        <button type="submit">ورود</button>
+    </form>
+    <a href="{{ url_for('register') }}">ثبت نام</a>
+</body>
+</html>
