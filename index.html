@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-     <html>
-     <head>
-         <title>Secondhand Market</title>
-         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-     </head>
-     <body>
-         <h1>Welcome to Secondhand Market!</h1>
-         <p>This is a simple website for buying and selling secondhand items.</p>
-         <button onclick="showMessage()">Click Me!</button>
-         <a href="{{ url_for('about') }}">About Us</a> <!-- لینک به صفحه About -->
-         <a href="{{ url_for('contact') }}">Contact Us</a> <!-- لینک به صفحه Contact -->
-         <script src="{{ url_for('static', filename='script.js') }}"></script>
-     </body>
-     </html>
+<html>
+<head>
+    <title>Secondhand Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Secondhand Market!</h1>
+    <p>This is a simple website for buying and selling secondhand items.</p>
+    <button onclick="showMessage()">Click Me!</button>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
